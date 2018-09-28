@@ -11,7 +11,7 @@ const mapStateToProps = (state)=> {
 
 const mapDispatchToProps = (dispatch)=> {
   return {
-    onIncreaseClick: () => dispatch({type: "ADD"})
+    onIncreaseClick: (i=1) => dispatch({type: "ADD", count: i})
   }
 }
 
@@ -39,12 +39,12 @@ class ToNext extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to="/list" />
+      return <Redirect push to="/list"/>
     }else {
       return (
         <div>
           <p>{this.props.count}</p>
-          <button onClick={this.props.onIncreaseClick}>plus</button>
+          < button onClick = {() =>this.props.onIncreaseClick()} > plus </button>
           <button onClick={this.nextFn}>netx</button>
         </div>
       )
