@@ -2,7 +2,7 @@ import React from 'react'
 import Todo from './todo'
 import Cut from './cut'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import List from '../views/list'
+import List from '@/views/list'
 const Home = ()=> {
   return (
     <div>
