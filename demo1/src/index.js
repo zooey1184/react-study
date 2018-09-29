@@ -14,6 +14,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import re from './reducer'
 import 'element-theme-default';
+import './index.css'
 
 
 const store = createStore(re)
