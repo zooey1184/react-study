@@ -1,8 +1,12 @@
 import React from 'react'
 import Todo from './todo'
 import Cut from './cut'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import List from '@/views/list'
+import NavPane from '@/components/nav/navHeader.js'
+import NavSide from '@/components/navSide/navSide.js'
+import image from '@/assets/plante.png'
+
 const Home = ()=> {
   return (
     <div>
@@ -14,13 +18,31 @@ const Home = ()=> {
 
 const App = ()=> {
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/list' component={List}/>
-      </Switch>
-    </Router>
+    // <Router>
+      <div>
+        <Switch>
+          <Route exact path='/home/index' component={Home}/>
+          <Route exact path='/home/list' component={List}/>
+        </Switch>
+      </div>
+    // </Router>
   )
 }
 
-export default App
+const Contain = ()=> (
+  <div>
+    <div className="nav">
+      <NavPane img={image} title="hello"/>
+    </div>
+    <div className="body">
+      <div className='side'>
+        <NavSide />
+      </div>
+      <div className='content'>
+        <App />
+      </div>
+    </div>
+  </div>
+)
+
+export default Contain

@@ -13,13 +13,11 @@ const mapDispatchToProps = (dispatch)=> {
   }
 }
 
-const Bb = ({count, cutClick})=> {
-  return (
-    <div>
-      <button onClick={cutClick}>cut</button>
-    </div>
-  )
-}
+const Bb = ({cutClick})=> (
+  <div>
+    <button onClick={cutClick}>cut</button>
+  </div>
+)
 
 const Cut = connect(mapStateToProps, mapDispatchToProps)(Bb)
 export default Cut

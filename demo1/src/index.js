@@ -8,16 +8,17 @@
 // registerServiceWorker();
 
 import React from 'react'
-import App from './container/index'
+// import App from './container/index'
+import App from '@/views/page/page'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import re from './reducer'
 import 'element-theme-default';
 import './css/index.less';
+import {createLogger} from 'redux-logger'
 
-
-const store = createStore(re)
+const store = createStore(re, applyMiddleware(createLogger()))
 
 ReactDOM.render(
   <Provider store={store}>

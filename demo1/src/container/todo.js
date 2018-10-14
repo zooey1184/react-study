@@ -39,7 +39,7 @@ class ToNext extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to="/list" />
+      return <Redirect push to="/home/list" />
     }else {
       return (
         <div>

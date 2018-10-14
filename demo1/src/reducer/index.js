@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import count from './add'
+import router from './router'
 // const re = (state = { count: 0 }, action)=> {
 //   const count = state.count
 //   switch (action.type) {
@@ -14,5 +15,6 @@ import count from './add'
 // export default re
 
 export default combineReducers({
-  count// 指代state.count
+  count, // 指代state.count
+  router
 })
