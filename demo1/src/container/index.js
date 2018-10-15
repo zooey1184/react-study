@@ -21,8 +21,8 @@ const App = ()=> {
     // <Router>
       <div>
         <Switch>
-          <Route exact path='/home/index' component={Home}/>
-          <Route exact path='/home/list' component={List}/>
+          <Route exact strict path='/home/index' component={Home}/>
+          <Route exact strict path='/home/list' component={List}/>
         </Switch>
       </div>
     // </Router>

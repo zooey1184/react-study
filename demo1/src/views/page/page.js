@@ -36,8 +36,8 @@ class NotFound extends Component {
 const Page = ()=> (
   <Router>
     <Switch>
-      <Route exact path='/home/:id' component={Home}></Route>
-      <Route exact path='/login' component={Login}></Route>
+      <Route exact path='/home/:id' strict  component={Home}></Route>
+      <Route exact path='/login' strict component={Login}></Route>
       <Route exact component={NotFound}></Route>
     </Switch>
   </Router>

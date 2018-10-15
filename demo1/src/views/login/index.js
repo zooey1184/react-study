@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './login.less'
 import login from '@/assets/logo.png'
 import {Redirect} from 'react-router-dom'
+import {Message} from 'element-react'
 
 class Login extends Component {
   constructor(props) {
@@ -13,11 +14,34 @@ class Login extends Component {
     }
     this.submitFn = this.submitFn.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleChange2 = this.handleChange2.bind(this)
+    this.open = this.open.bind(this)
+  }
+  open(state) {
+    console.log(state)
+    if(state==='success') {
+      Message({
+        message: '登陆成功',
+        type: state
+      });
+    }else if(state==='warning') {
+      Message({
+        message: '用户名或密码不正确哦',
+        type: state
+      });
+    }
+    
   }
   submitFn() {
-    console.log(this.state);
-    
+    if(this.state.pwd==='123456' && this.state.phone==='15960018047') {
+      this.open('success')
+      setTimeout(()=> {
+        this.setState({
+          redirect: true
+        })
+      }, 500)
+    }else {
+      this.open('warning')
+    }
   }
   handleChange(e) {
     let t = e.target
@@ -27,12 +51,9 @@ class Login extends Component {
       [name]: value
     });
   }
-  handleChange2(e) {
-    this.setState({pwd: e.target.value});
-  }
   render() {
     if(this.state.redirect) {
-      return <Redirect push path='/home/index'/>
+      return <Redirect push to='/home/index'/>
     }else {
       return (
         <div className='login_page'>
