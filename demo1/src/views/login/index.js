@@ -17,7 +17,6 @@ class Login extends Component {
     this.open = this.open.bind(this)
   }
   open(state) {
-    console.log(state)
     if(state==='success') {
       Message({
         message: '登陆成功',
@@ -34,6 +33,7 @@ class Login extends Component {
   submitFn() {
     if(this.state.pwd==='123456' && this.state.phone==='15960018047') {
       this.open('success')
+      window.localStorage.setItem('login', 'login')
       setTimeout(()=> {
         this.setState({
           redirect: true
