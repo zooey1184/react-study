@@ -17,6 +17,7 @@ const Home = ()=> {
 }
 
 const App = ()=> {
+  console.log('hello');
   return (
     // <Router>
       <div>
